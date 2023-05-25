@@ -10,11 +10,13 @@ from user.forms import EarlyOutRequest
 
 
 def submit_eo_request(request):
+    form = EarlyOutRequest()
     if request.method == 'POST':
         form = EarlyOutRequest(request.POST)
         if form.is_valid():
             form.save()
-            return run_webdriver()
+    context = {'form': form}
+    return render(request, 'eo_request.html', context)
 
 
 def update_webdriver(request):

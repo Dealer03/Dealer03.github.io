@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import UserRequest, UserLogin
+from .models import UserRequest
 
 # Register your models here.
-admin.site.register(UserLogin)
 admin.site.register(UserRequest)
